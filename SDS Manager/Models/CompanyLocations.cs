@@ -7,6 +7,7 @@ namespace SDS_Manager.Models
 {
     public class CompanyLocations
     {
+        public int LocationId { get; set; }
         public int StreetNumber { get; set; }
         public string StreetName { get; set; }
         public string City { get; set; }
