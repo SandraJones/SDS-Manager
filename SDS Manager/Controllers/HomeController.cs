@@ -14,5 +14,11 @@ namespace SDS_Manager.Controllers
 
             return View();
         }
+        public ActionResult About()
+        {
+            ViewBag.Title = "About Page";
+
+            return View();
+        }
     }
 }
