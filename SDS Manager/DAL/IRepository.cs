@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SDS_Manager.DAL
 {
-    public class IRpository
+    public class IRepository
     {
     }
 }

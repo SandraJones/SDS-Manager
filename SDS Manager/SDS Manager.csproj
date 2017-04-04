@@ -217,7 +217,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAL\IDbModel.cs" />
-    <Compile Include="DAL\IRpository.cs" />
+    <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\SDSDbContext.cs" />
     <Compile Include="DAL\Repository.cs" />
     <Compile Include="DAL\SectionQuery.cs" />

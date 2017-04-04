@@ -21,5 +21,33 @@ namespace SDS_Manager.DAL
         {
             return _context.GetCollection<TEntity>().AsQueryable();
         }
-    }
+        //this method is to get one
+        public TEntity GetById<TEntity>(int id) where TEntity: class, IDbModel
+        {
+            return _context.GetCollection<TEntity>().FirstOrDefault(XmlSiteMapProvider => XmlSiteMapProvider.Id == id);
+        }
+        //to add to the collection use Insert 
+        public void Insert<TEntity>(TEntity itemToInsert)
+        {
+            _context.GetCollection<TEntity>().Add(itemToInsert);
+        }
+        public void Delete<TEntity>(int id) where TEntity : class IDbModel
+        {
+            _context.GetCollection<TEntity>().Remove(GetById<TEntity>(id));
+        }
+        //this method will update an existing item or insert a new item
+        public void Upsert<TEntity>(TEntity objectToSave) where TEntity : class IDbModel
+        {
+            var exist = _context.GetCollection<TEntity>().Any(t => t.Id == objectToSave.Id);
+            if (exist)
+            {
+                _context.GetCollection<TEntity>().Attach(objectToSave);
+                _context.Entry(objectToSave).State = System.Data.Entity.EntityState.Modified;
+            }
+            else
+            {
+                _context.GetCollection<TEntity>().Add(objectToSave);
+            }
+            _context.SaveChanges();
+        }
 }
