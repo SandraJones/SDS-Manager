@@ -22,7 +22,7 @@ namespace SDS_Manager.DAL
             return _context.GetCollection<TEntity>().AsQueryable();
         }
         //this method is to get one
-        public TEntity GetById<TEntity>(int id) where TEntity: class, IDbModel
+        public TEntity GetById<TEntity>(int id) where TEntity : class, IDbModel
         {
             return _context.GetCollection<TEntity>().FirstOrDefault(XmlSiteMapProvider => XmlSiteMapProvider.Id == id);
         }
@@ -50,4 +50,15 @@ namespace SDS_Manager.DAL
             }
             _context.SaveChanges();
         }
+        //method to invoke a  scraping action to collect info for each section/model using GrabzIt
+        public void CollectSectionsText<TEntity>()
+        {
+            //code to prep for api call to msds resources 
+        }
+        public void SeparateIntoSections<TEntity>()
+        {
+            //code to take the collected sections text above, and separate into sections 
+            //if Section matches Section 1 thru 16 with switch/case
+        }
+    }
 }
