@@ -232,6 +232,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CompanyLocations.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\PersonalGear.cs" />
     <Compile Include="Models\SafetyEquipment.cs" />
     <Compile Include="Models\Section1.cs" />
     <Compile Include="Models\Section10.cs" />
