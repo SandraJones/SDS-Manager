@@ -7,6 +7,9 @@ namespace SDS_Manager.Models
 {
     public class PersonalGear
     {
-        public int PersonalProtectiveGear { get; set; }//table includes # of protective glasses or side shields
+        public int Eyewear { get; set; }//table includes # of protective glasses or side shields
+        public int Gloves { get; set; }
+        public int Labcoat { get; set; }
+        public int OrganicsMask { get; set; }
     }
 }
