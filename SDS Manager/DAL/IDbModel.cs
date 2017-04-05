@@ -5,7 +5,8 @@ using System.Web;
 
 namespace SDS_Manager.DAL
 {
-    public class IDbModel
+    public interface IDbModel
     {
+        int Id { get; set; }
     }
 }
